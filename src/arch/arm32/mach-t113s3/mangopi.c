@@ -39,8 +39,6 @@ static void mach_smpinit(struct machine_t * mach)
 
 static void mach_smpboot(struct machine_t * mach, void (*func)(void))
 {
-	extern void sys_smp_secondary_boot(void (*func)(void));
-	sys_smp_secondary_boot(func);
 }
 
 static void mach_shutdown(struct machine_t * mach)
@@ -92,7 +90,7 @@ static int mach_keygen(struct machine_t * mach, const char * msg, void * key)
 
 static struct machine_t mangopi = {
 	.name 		= "mangopi",
-	.desc 		= "MangoPi-MQ Based On Allwinner F133 SOC",
+	.desc 		= "MangoPi-MQ Based On Allwinner T133-S3 SOC",
 	.detect 	= mach_detect,
 	.smpinit	= mach_smpinit,
 	.smpboot	= mach_smpboot,
